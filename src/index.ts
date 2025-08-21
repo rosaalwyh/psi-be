@@ -3,7 +3,7 @@ import router from "./routers";
 import db from "./config/db";
 
 const app = express();
-const PORT = 3000;
+const PORT = 80;
 
 if (!db) {
   throw new Error("Database configuration is not set");
