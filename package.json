@@ -1,0 +1,36 @@
+{
+  "name": "psi-be",
+  "version": "1.0.0",
+  "description": "Technical Test PSI",
+  "main": "index.js",
+  "scripts": {
+    "dev": "nodemon --watch 'src/**/*.ts' --exec ts-node src/index.ts",
+    "build": "tsc",
+    "start": "node dist/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosaalwyh/psi-be.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/rosaalwyh/psi-be/issues"
+  },
+  "homepage": "https://github.com/rosaalwyh/psi-be#readme",
+  "dependencies": {
+    "express": "^5.1.0",
+    "pg-monitor": "^3.0.0",
+    "pg-promise": "^11.15.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.3",
+    "@types/node": "^24.3.0",
+    "@types/pg-promise": "^0.0.28",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.9.2"
+  }
+}
