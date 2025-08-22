@@ -3,6 +3,7 @@ import express from "express";
 import router from "./routers";
 import db from "./config/db";
 import cookieParser from "cookie-parser";
+import cors from "cors";
 
 const app = express();
 const PORT = 80;
@@ -17,7 +18,12 @@ app.use(express.json());
 app.get("/", (req, res) => {
   res.send("Hello TypeScript + Express!");
 });
-
+app.use(
+  cors({
+    origin: "http://localhost:5173",
+    credentials: true,
+  })
+);
 app.use(router);
 app.listen(PORT, async () => {
   console.log(`Server is running on http://localhost:${PORT}`);

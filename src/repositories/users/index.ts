@@ -56,5 +56,26 @@ class UserRepository {
 
     return result;
   }
+
+  static async getList() {
+    try {
+      const query = `
+        select c.id,
+        c.id as company_id,
+        u.username as name,
+        u.email,
+        u.telp,
+        c.company_code,
+        c.company_name
+        from companies c
+        join users u on c.user_id  = u.username
+      `;
+      const result = await db.manyOrNone(query);
+      return result;
+    } catch (error) {
+      console.log(error, "ini err");
+      throw new Error("Internal server error");
+    }
+  }
 }
 export default UserRepository;
