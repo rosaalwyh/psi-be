@@ -1,6 +1,8 @@
+require("dotenv").config();
 import express from "express";
 import router from "./routers";
 import db from "./config/db";
+import cookieParser from "cookie-parser";
 
 const app = express();
 const PORT = 80;
@@ -9,6 +11,7 @@ if (!db) {
   throw new Error("Database configuration is not set");
 }
 
+app.use(cookieParser());
 app.use(express.json());
 
 app.get("/", (req, res) => {

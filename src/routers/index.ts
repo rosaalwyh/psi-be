@@ -5,7 +5,7 @@ import eCommerceRouter from "./e-commerce";
 
 const router = express();
 
-router.use("/auth", authRouter);
+router.use("/", authRouter);
 router.use("/users", userRouter);
 router.use("/eCommerce", eCommerceRouter);
 
